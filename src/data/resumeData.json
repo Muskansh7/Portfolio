@@ -1,0 +1,169 @@
+{
+  "personal": {
+    "name": "Muskan Sharma",
+    "title": "AI/ML Engineer & Full-Stack SDE",
+    "email": "muskansharma4997@gmail.com",
+    "phone": "+91-7827019177",
+    "location": "Delhi, India (Open to remote / relocation)",
+    "locationShort": "Delhi, India",
+    "linkedin": "https://www.linkedin.com/in/muskan-sharma-91025b297/",
+    "github": "https://github.com/Muskansh7"
+  },
+  "education": {
+    "university": "VIT Bhopal University",
+    "degree": "B.Tech in Computer Science & Engineering",
+    "specialization": "Artificial Intelligence & Machine Learning",
+    "graduationYear": "2027",
+    "cgpa": "8.12"
+  },
+  "skills": [
+    {
+      "category": "Languages",
+      "color": "#00F5FF",
+      "items": [
+        { "name": "Python", "level": 92 },
+        { "name": "C++", "level": 78 },
+        { "name": "SQL", "level": 85 }
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "color": "#7C3AED",
+      "items": [
+        { "name": "Large Language Models (LLMs)", "level": 90 },
+        { "name": "RAG Pipelines", "level": 92 },
+        { "name": "LangChain & LangGraph", "level": 88 },
+        { "name": "HuggingFace & FAISS", "level": 85 },
+        { "name": "Computer Vision", "level": 80 },
+        { "name": "Multimodal AI & Vector DBs", "level": 86 }
+      ]
+    },
+    {
+      "category": "Backend & Frameworks",
+      "color": "#00F5FF",
+      "items": [
+        { "name": "FastAPI (REST APIs)", "level": 88 },
+        { "name": "Streamlit & Gradio", "level": 90 },
+        { "name": "React", "level": 75 }
+      ]
+    },
+    {
+      "category": "Databases",
+      "color": "#7C3AED",
+      "items": [
+        { "name": "PostgreSQL", "level": 84 },
+        { "name": "MySQL", "level": 80 }
+      ]
+    },
+    {
+      "category": "Tools & Methodology",
+      "color": "#00F5FF",
+      "items": [
+        { "name": "Git & GitHub CI/CD", "level": 88 },
+        { "name": "AWS Cloud Services", "level": 78 },
+        { "name": "MLOps & Agile SDLC", "level": 82 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Bluestock Fintech",
+      "role": "Software Development Engineer Intern",
+      "duration": "Mar 2026 – Apr 2026",
+      "color": "#00F5FF",
+      "bullets": [
+        "Backend development with Python and REST APIs, building scalable microservices.",
+        "Successfully authored and integrated 10+ new production-grade backend features.",
+        "Collaborated using Git CI/CD and Agile methodologies within weekly sprint pipelines."
+      ]
+    },
+    {
+      "company": "SmartBridge",
+      "role": "Machine Learning Intern",
+      "duration": "May 2025 – Jun 2025",
+      "color": "#7C3AED",
+      "bullets": [
+        "Designed end-to-end ML workflows processing dataset libraries of 10,000+ records.",
+        "Achieved a 20% model performance metric gain via parameter tuning and engineering.",
+        "Engineered automated pipeline nodes, rendering experimentation cycles 30% faster."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Adaptive AI Agent Platform",
+      "desc": "A production-ready multi-agent workspace leveraging LangGraph to orchestrate Gemini & OpenAI models. It routes complex user questions to web search extensions dynamically, reducing incomplete answers by 30%.",
+      "stats": [
+        { "label": "Latency", "val": "Sub-2s" },
+        { "label": "Uptime", "val": "99%" },
+        { "label": "Interactions", "val": "1,000+" }
+      ],
+      "stack": ["LangGraph", "Gemini", "OpenAI", "FastAPI", "Streamlit", "Multi-Agent"],
+      "github": "https://github.com/Muskansh7/adaptive-ai-agent",
+      "demo": "#"
+    },
+    {
+      "title": "MediLens AI Knowledge Engine",
+      "desc": "An advanced RAG architecture indexing 1,000+ medical textbooks and publications. Harnessing LLaMA 3.3 and Gemini Vision, it supports multimodal healthcare QA, boosting retrieval precision by 35%.",
+      "stats": [
+        { "label": "Retrieval Gain", "val": "+35%" },
+        { "label": "Latency Drop", "val": "-25%" },
+        { "label": "Medical Sources", "val": "1,000+" }
+      ],
+      "stack": ["RAG", "FAISS", "LLaMA 3.3", "Gemini Vision", "Healthcare AI", "Vector DB"],
+      "github": "https://github.com/Muskansh7/medilens-knowledge-engine",
+      "demo": "#"
+    },
+    {
+      "title": "VoiceVision Healthcare AI",
+      "desc": "A multimodal interface bridging physical diagnosis tools. By merging speech recognition with computer vision models, it consolidates diagnostic views and cuts developer integration cycles by 40%.",
+      "stats": [
+        { "label": "Multimodal Tests", "val": "500+" },
+        { "label": "Integration Effort", "val": "-40%" },
+        { "label": "Inference", "val": "Local/Cloud" }
+      ],
+      "stack": ["Computer Vision", "Speech Recognition", "LLM", "Multimodal AI", "Speech-to-Text"],
+      "github": "https://github.com/Muskansh7/voicevision-healthcare",
+      "demo": "#"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "ET-AI Hackathon 2026 Semi-Finalist",
+      "org": "The Economic Times Digital",
+      "tag": "🏆 HACKATHON",
+      "color": "#FFD700"
+    },
+    {
+      "title": "Machine Learning Specialization",
+      "org": "DeepLearning.AI",
+      "tag": "📜 SPEC.",
+      "color": "#00F5FF"
+    },
+    {
+      "title": "NPTEL: Introduction to IoT",
+      "org": "Elite Certificate",
+      "tag": "📜 COURSE",
+      "color": "#7C3AED"
+    },
+    {
+      "title": "AI/ML Professional Cohort",
+      "org": "VIT Bhopal University",
+      "tag": "⭐ ACADEMIC",
+      "color": "#FFD700"
+    }
+  ],
+  "leadership": {
+    "role": "Vice President of Public Relations",
+    "organization": "Toastmasters International (University Chapter)",
+    "duration": "2025 – Present",
+    "bullets": [
+      "Directed outreach and local campaigns to manage and engage a growing community of 20+ active public speaking members.",
+      "Led visual identities, marketing newsletters, and digital flyers, increasing student cohort turnout in weekly assemblies."
+    ],
+    "stats": [
+      { "label": "Members Managed", "val": "20+" },
+      { "label": "Chapters Coordinated", "val": "20+" }
+    ]
+  }
+}
