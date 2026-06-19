@@ -61,10 +61,13 @@ ${parsedData.experience.map(exp => `
 ### Featured Projects
 ${parsedData.projects.map(p => `
 - Title: ${p.title}
-- Description: ${p.desc}
+- Role: ${p.role}
+- Summary: ${p.desc}
+- Problem: ${p.problem}
+- Approach: ${p.approach}
+- Impact: ${p.impact}
 - Stack: ${p.stack.join(', ')}
-- Stats: ${p.stats.map(s => `${s.label}: ${s.val}`).join(', ')}
-- Links: GitHub (${p.github}), Demo (${p.demo})
+- Links: GitHub (${p.github})${p.demo ? `, Demo (${p.demo})` : ''}
 `).join('\n')}
 
 ### Certifications & Hackathons
@@ -150,4 +153,9 @@ if (process.env.NODE_ENV === 'production' || fs.existsSync(path.join(__dirname, 
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+  if (process.env.OPENAI_API_KEY) {
+    console.log('OpenAI API key loaded — chat assistant is live.');
+  } else {
+    console.warn('OPENAI_API_KEY is missing — chat assistant will run in offline mode.');
+  }
 });

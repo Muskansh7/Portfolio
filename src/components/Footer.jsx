@@ -15,15 +15,7 @@ const Footer = () => {
   };
 
   return (
-    <footer
-      style={{
-        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-        background: 'rgba(5, 5, 8, 0.4)',
-        padding: '40px 24px',
-        position: 'relative',
-        zIndex: 20,
-      }}
-    >
+    <footer className="site-footer">
       <div
         style={{
           maxWidth: '1200px',
@@ -38,9 +30,7 @@ const Footer = () => {
       >
         {/* Left: Branding & Copyright */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F3F4F6', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
-            Designed & Built by Muskan Sharma
-          </p>
+          <p className="footer-brand">Designed & Built by Muskan Sharma</p>
           <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontFamily: "'DM Mono', monospace" }}>
             © {currentYear} // ALL_SYSTEMS_OPERATIONAL
           </span>
@@ -60,7 +50,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               title={item.label}
               style={{
-                color: '#FFFFFF', // High contrast icons
+                color: 'var(--color-heading)',
                 transition: 'color var(--transition-fast)',
                 display: 'flex',
                 alignItems: 'center',
@@ -80,7 +70,7 @@ const Footer = () => {
             background: 'rgba(255, 255, 255, 0.02)',
             border: '1px solid rgba(255, 255, 255, 0.05)',
             borderRadius: '8px',
-            color: '#FFFFFF',
+            color: 'var(--color-heading)',
             width: '40px',
             height: '40px',
             cursor: 'pointer',
@@ -97,6 +87,23 @@ const Footer = () => {
       </div>
 
       <style>{`
+        .site-footer {
+          border-top: 1px solid var(--color-nav-border);
+          background: var(--color-footer-bg);
+          padding: 40px 24px;
+          position: relative;
+          z-index: 20;
+          transition: background var(--transition-smooth), border-color var(--transition-smooth);
+        }
+
+        .footer-brand {
+          margin: 0;
+          font-size: 0.9rem;
+          color: var(--color-text-primary);
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 500;
+        }
+
         .footer-social-link:hover {
           color: #00F5FF !important;
         }

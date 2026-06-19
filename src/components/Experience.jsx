@@ -39,7 +39,7 @@ const Experience = () => {
   return (
     <section id="experience" ref={ref} style={{ position: 'relative' }}>
       <div className="section-container">
-        <h2 className="section-title">Professional Journey</h2>
+        <h2 className="section-title">Experience</h2>
 
         <motion.div
           variants={containerVariants}
@@ -48,8 +48,7 @@ const Experience = () => {
           style={{
             position: 'relative',
             maxWidth: '900px',
-            margin: '40px auto 0 auto',
-            padding: '20px 0',
+            margin: '0 auto',
           }}
           className="timeline-container"
         >
@@ -117,7 +116,7 @@ const Experience = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    color: '#FFFFFF', // High-contrast white for small text
+                    color: 'var(--color-heading)', // High-contrast white for small text
                     fontSize: '0.82rem',
                     fontFamily: "'DM Mono', monospace",
                     marginBottom: '10px',
@@ -131,7 +130,7 @@ const Experience = () => {
                 <h3
                   style={{
                     fontSize: '1.35rem',
-                    color: '#FFFFFF',
+                    color: 'var(--color-heading)',
                     margin: '0 0 6px 0',
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontWeight: 650,

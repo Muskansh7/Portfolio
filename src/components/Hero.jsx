@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Linkedin, Github } from './BrandIcons';
 import resumeData from '../data/resumeData.json';
 
@@ -67,18 +67,7 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="home"
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-        paddingTop: '80px',
-      }}
-    >
-      {/* Background Animated Blob */}
+    <section id="home">
       <div className="interactive-blob" style={{ top: '20%', right: '10%' }} />
       <div className="interactive-blob" style={{ bottom: '10%', left: '5%', animationDelay: '-10s' }} />
 
@@ -94,68 +83,27 @@ const Hero = () => {
             maxWidth: '800px',
           }}
         >
-          {/* Location Badge & Status */}
+          {/* Location Badge */}
           <motion.div
             variants={itemVariants}
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '6px',
               alignSelf: 'flex-start',
+              background: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              padding: '6px 14px',
+              borderRadius: '20px',
+              fontSize: '0.8rem',
+              color: 'var(--color-heading)',
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 500,
             }}
           >
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-                padding: '6px 14px',
-                borderRadius: '20px',
-                fontSize: '0.8rem',
-                color: '#FFFFFF', // High contrast for small text
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 500,
-              }}
-            >
-              <MapPin size={14} color="#00F5FF" />
-              <span>{resumeData.personal.locationShort}</span>
-            </div>
-            
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'rgba(0, 245, 255, 0.05)',
-                border: '1px solid rgba(0, 245, 255, 0.15)',
-                padding: '6px 14px',
-                borderRadius: '20px',
-                fontSize: '0.8rem',
-                color: '#00F5FF',
-                fontWeight: 600,
-                fontFamily: "'Space Grotesk', sans-serif",
-              }}
-            >
-              <Sparkles size={14} color="#00F5FF" style={{ animation: 'pulse 1.5s infinite' }} />
-              <span>Open to Roles</span>
-            </div>
+            <MapPin size={14} color="#00F5FF" />
+            <span>{resumeData.personal.locationShort}</span>
           </motion.div>
-
-          {/* Intro */}
-          <motion.span
-            variants={itemVariants}
-            style={{
-              fontFamily: "'DM Mono', monospace",
-              color: '#00F5FF',
-              fontSize: '1rem',
-              letterSpacing: '0.1em',
-              fontWeight: 600,
-            }}
-          >
-            SYSTEM_ONLINE // WELCOME
-          </motion.span>
 
           {/* Name Display */}
           <motion.h1
@@ -185,7 +133,7 @@ const Hero = () => {
               style={{
                 fontSize: 'clamp(1.4rem, 4vw, 2.2rem)',
                 fontWeight: 700,
-                color: '#FFFFFF',
+                color: 'var(--color-heading)',
                 fontFamily: "'Space Grotesk', sans-serif",
               }}
             >
@@ -218,7 +166,7 @@ const Hero = () => {
               maxWidth: '600px',
             }}
           >
-            Building intelligent systems that think, reason, and scale. Specializing in multi-agent routing, multimodal retrieval architectures, and end-to-end production pipelines.
+            Building intelligent systems — multi-agent routing, RAG pipelines, and production-grade AI backends.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -232,11 +180,11 @@ const Hero = () => {
             }}
           >
             <button
-              onClick={() => handleScrollTo('projects')}
+              onClick={() => handleScrollTo('experience')}
               style={{
                 background: 'linear-gradient(135deg, #7C3AED, #00F5FF)',
                 border: 'none',
-                color: '#FFFFFF',
+                color: 'var(--color-heading)',
                 padding: '14px 28px',
                 fontSize: '0.95rem',
                 fontWeight: 600,
@@ -251,7 +199,7 @@ const Hero = () => {
               }}
               className="primary-btn"
             >
-              <span>View My Work</span>
+              <span>View Experience</span>
               <ArrowRight size={16} />
             </button>
             
@@ -260,7 +208,7 @@ const Hero = () => {
               style={{
                 background: 'rgba(255, 255, 255, 0.02)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
-                color: '#F3F4F6',
+                color: 'var(--color-text-primary)',
                 padding: '14px 28px',
                 fontSize: '0.95rem',
                 fontWeight: 600,
@@ -297,7 +245,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 title={social.title}
                 style={{
-                  color: '#FFFFFF', // High contrast icons
+                  color: 'var(--color-heading)', // High contrast icons
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',

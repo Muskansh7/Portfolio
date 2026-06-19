@@ -50,7 +50,6 @@ const Contact = () => {
             display: 'grid',
             gridTemplateColumns: '0.9fr 1.1fr',
             gap: '60px',
-            marginTop: '40px',
           }}
           className="contact-grid"
         >
@@ -60,7 +59,7 @@ const Contact = () => {
               <h3
                 style={{
                   fontSize: '1.45rem',
-                  color: '#FFFFFF',
+                  color: 'var(--color-heading)',
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontWeight: 650,
                   marginBottom: '12px',
@@ -92,8 +91,8 @@ const Contact = () => {
                     <Mail size={18} />
                   </div>
                   <div>
-                    <span style={{ display: 'block', fontSize: '0.75rem', color: '#E5E7EB', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Email</span>
-                    <a href={`mailto:${resumeData.personal.email}`} style={{ color: '#FFFFFF', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }} className="hover-cyan">
+                    <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Email</span>
+                    <a href={`mailto:${resumeData.personal.email}`} style={{ color: 'var(--color-heading)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }} className="hover-cyan">
                       {resumeData.personal.email}
                     </a>
                   </div>
@@ -101,7 +100,7 @@ const Contact = () => {
                 
                 <button
                   onClick={() => copyToClipboard(resumeData.personal.email, 'email')}
-                  style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ background: 'none', border: 'none', color: 'var(--color-heading)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   title="Copy to clipboard"
                   className="copy-btn"
                 >
@@ -126,8 +125,8 @@ const Contact = () => {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <span style={{ display: 'block', fontSize: '0.75rem', color: '#E5E7EB', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Phone</span>
-                    <a href={`tel:${resumeData.personal.phone.replace(/[^0-9+]/g, '')}`} style={{ color: '#FFFFFF', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }} className="hover-cyan">
+                    <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Phone</span>
+                    <a href={`tel:${resumeData.personal.phone.replace(/[^0-9+]/g, '')}`} style={{ color: 'var(--color-heading)', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }} className="hover-cyan">
                       {resumeData.personal.phone}
                     </a>
                   </div>
@@ -135,7 +134,7 @@ const Contact = () => {
 
                 <button
                   onClick={() => copyToClipboard(resumeData.personal.phone, 'phone')}
-                  style={{ background: 'none', border: 'none', color: '#FFFFFF', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ background: 'none', border: 'none', color: 'var(--color-heading)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   title="Copy to clipboard"
                   className="copy-btn"
                 >
@@ -164,7 +163,7 @@ const Contact = () => {
                     borderRadius: '8px',
                     border: '1px solid rgba(255,255,255,0.05)',
                     background: 'rgba(255,255,255,0.01)',
-                    color: '#FFFFFF',
+                    color: 'var(--color-heading)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'all var(--transition-fast)',
@@ -187,7 +186,7 @@ const Contact = () => {
                     borderRadius: '8px',
                     border: '1px solid rgba(255,255,255,0.05)',
                     background: 'rgba(255,255,255,0.01)',
-                    color: '#FFFFFF',
+                    color: 'var(--color-heading)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'all var(--transition-fast)',
@@ -215,7 +214,7 @@ const Contact = () => {
                 >
                   {/* Name field */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="name" style={{ fontSize: '0.8rem', color: '#E5E7EB', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
+                    <label htmlFor="name" style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
                       YOUR NAME
                     </label>
                     <input
@@ -227,11 +226,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="Muskan Sharma"
                       style={{
-                        background: 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid rgba(255, 255, 255, 0.06)',
+                        background: 'var(--color-input-bg)',
+                        border: '1px solid var(--color-input-border)',
                         borderRadius: '8px',
                         padding: '12px 16px',
-                        color: '#F3F4F6',
+                        color: 'var(--color-text-primary)',
                         fontSize: '0.9rem',
                         outline: 'none',
                         transition: 'border var(--transition-fast)',
@@ -242,7 +241,7 @@ const Contact = () => {
 
                   {/* Email field */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="email" style={{ fontSize: '0.8rem', color: '#E5E7EB', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
+                    <label htmlFor="email" style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
                       YOUR EMAIL
                     </label>
                     <input
@@ -254,11 +253,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="hello@domain.com"
                       style={{
-                        background: 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid rgba(255, 255, 255, 0.06)',
+                        background: 'var(--color-input-bg)',
+                        border: '1px solid var(--color-input-border)',
                         borderRadius: '8px',
                         padding: '12px 16px',
-                        color: '#F3F4F6',
+                        color: 'var(--color-text-primary)',
                         fontSize: '0.9rem',
                         outline: 'none',
                         transition: 'border var(--transition-fast)',
@@ -269,7 +268,7 @@ const Contact = () => {
 
                   {/* Message field */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <label htmlFor="message" style={{ fontSize: '0.8rem', color: '#E5E7EB', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
+                    <label htmlFor="message" style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, letterSpacing: '0.02em' }}>
                       YOUR MESSAGE
                     </label>
                     <textarea
@@ -281,11 +280,11 @@ const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="I'd love to chat about a job opportunity or collaboration..."
                       style={{
-                        background: 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid rgba(255, 255, 255, 0.06)',
+                        background: 'var(--color-input-bg)',
+                        border: '1px solid var(--color-input-border)',
                         borderRadius: '8px',
                         padding: '12px 16px',
-                        color: '#F3F4F6',
+                        color: 'var(--color-text-primary)',
                         fontSize: '0.9rem',
                         outline: 'none',
                         resize: 'none',
@@ -303,7 +302,7 @@ const Contact = () => {
                     style={{
                       background: 'linear-gradient(135deg, #7C3AED 0%, #00F5FF 100%)',
                       border: 'none',
-                      color: '#FFFFFF',
+                      color: 'var(--color-heading)',
                       padding: '14px',
                       borderRadius: '8px',
                       fontWeight: 600,
@@ -361,7 +360,7 @@ const Contact = () => {
                   >
                     <Check size={32} />
                   </div>
-                  <h4 style={{ fontSize: '1.4rem', color: '#FFFFFF', margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h4 style={{ fontSize: '1.4rem', color: 'var(--color-heading)', margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>
                     Transmission Complete
                   </h4>
                   <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', maxWidth: '280px', margin: 0 }}>

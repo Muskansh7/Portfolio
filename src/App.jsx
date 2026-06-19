@@ -8,11 +8,9 @@ import NeuralNetwork from './components/NeuralNetwork';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Certifications from './components/Certifications';
-import Leadership from './components/Leadership';
+import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
@@ -38,11 +36,9 @@ function App() {
             <main>
               <Hero />
               <About />
-              <Skills />
               <Experience />
               <Projects />
-              <Certifications />
-              <Leadership />
+              <Skills />
               <Contact />
             </main>
 

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const NeuralNetwork = () => {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: null, y: null, radius: 180 });
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -158,11 +160,12 @@ const NeuralNetwork = () => {
       window.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas
       ref={canvasRef}
+      className="neural-canvas"
       style={{
         position: 'fixed',
         top: 0,
@@ -171,7 +174,8 @@ const NeuralNetwork = () => {
         height: '100%',
         pointerEvents: 'none',
         zIndex: 0,
-        backgroundColor: '#0A0A0F',
+        backgroundColor: 'var(--bg-base)',
+        transition: 'background-color 0.4s ease, opacity 0.4s ease',
       }}
     />
   );

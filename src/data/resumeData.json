@@ -22,8 +22,12 @@
       "color": "#00F5FF",
       "items": [
         { "name": "Python", "level": 92 },
+        { "name": "JavaScript", "level": 80 },
+        { "name": "TypeScript", "level": 78 },
         { "name": "C++", "level": 78 },
-        { "name": "SQL", "level": 85 }
+        { "name": "SQL", "level": 85 },
+        { "name": "HTML", "level": 82 },
+        { "name": "CSS", "level": 80 }
       ]
     },
     {
@@ -31,20 +35,33 @@
       "color": "#7C3AED",
       "items": [
         { "name": "Large Language Models (LLMs)", "level": 90 },
+        { "name": "OpenAI", "level": 88 },
+        { "name": "Gemini", "level": 88 },
+        { "name": "Groq & LLaMA 3.3", "level": 86 },
         { "name": "RAG Pipelines", "level": 92 },
         { "name": "LangChain & LangGraph", "level": 88 },
+        { "name": "Multi-Agent Systems", "level": 88 },
+        { "name": "NLP", "level": 85 },
         { "name": "HuggingFace & FAISS", "level": 85 },
         { "name": "Computer Vision", "level": 80 },
-        { "name": "Multimodal AI & Vector DBs", "level": 86 }
+        { "name": "Speech-to-Text", "level": 82 },
+        { "name": "Multimodal AI", "level": 86 },
+        { "name": "Vector Databases", "level": 86 }
       ]
     },
     {
       "category": "Backend & Frameworks",
       "color": "#00F5FF",
       "items": [
-        { "name": "FastAPI (REST APIs)", "level": 88 },
+        { "name": "FastAPI", "level": 88 },
+        { "name": "Node.js & Express", "level": 82 },
+        { "name": "Next.js", "level": 80 },
+        { "name": "React", "level": 85 },
         { "name": "Streamlit & Gradio", "level": 90 },
-        { "name": "React", "level": 75 }
+        { "name": "SQLAlchemy", "level": 80 },
+        { "name": "REST APIs", "level": 88 },
+        { "name": "JWT Authentication", "level": 82 },
+        { "name": "Microservices", "level": 84 }
       ]
     },
     {
@@ -52,16 +69,23 @@
       "color": "#7C3AED",
       "items": [
         { "name": "PostgreSQL", "level": 84 },
-        { "name": "MySQL", "level": 80 }
+        { "name": "MySQL", "level": 80 },
+        { "name": "MongoDB", "level": 78 },
+        { "name": "FAISS Vector Store", "level": 85 }
       ]
     },
     {
-      "category": "Tools & Methodology",
+      "category": "Tools & Deployment",
       "color": "#00F5FF",
       "items": [
         { "name": "Git & GitHub CI/CD", "level": 88 },
         { "name": "AWS Cloud Services", "level": 78 },
-        { "name": "MLOps & Agile SDLC", "level": 82 }
+        { "name": "Vercel & Render", "level": 80 },
+        { "name": "Hugging Face Spaces", "level": 82 },
+        { "name": "Streamlit Cloud", "level": 85 },
+        { "name": "React Router", "level": 80 },
+        { "name": "Agile SDLC", "level": 82 },
+        { "name": "MLOps", "level": 78 }
       ]
     }
   ],
@@ -92,39 +116,59 @@
   "projects": [
     {
       "title": "Adaptive AI Agent Platform",
-      "desc": "A production-ready multi-agent workspace leveraging LangGraph to orchestrate Gemini & OpenAI models. It routes complex user questions to web search extensions dynamically, reducing incomplete answers by 30%.",
-      "stats": [
-        { "label": "Latency", "val": "Sub-2s" },
-        { "label": "Uptime", "val": "99%" },
-        { "label": "Interactions", "val": "1,000+" }
-      ],
+      "role": "My role · AI/ML engineer — multi-agent orchestration, FastAPI backend, and Streamlit UI",
+      "desc": "Multi-agent workspace using LangGraph to orchestrate Gemini and OpenAI models, with dynamic web search routing for complex user queries.",
+      "problem": "Single-model assistants struggle to route open-ended queries to the right tools or web search, which leads to incomplete answers.",
+      "approach": "LangGraph multi-agent workspace with Gemini and OpenAI, dynamic web search extensions, FastAPI backend, and Streamlit UI.",
+      "impact": "End-to-end agent platform with intelligent query routing and a deployable FastAPI + Streamlit stack.",
       "stack": ["LangGraph", "Gemini", "OpenAI", "FastAPI", "Streamlit", "Multi-Agent"],
-      "github": "https://github.com/Muskansh7/adaptive-ai-agent",
-      "demo": "#"
+      "github": "https://github.com/Muskansh7/ai_agent_chatbot",
+      "demo": "https://aiagentchatbot-yen44b5ucukfsre8ylgewb.streamlit.app/"
     },
     {
       "title": "MediLens AI Knowledge Engine",
-      "desc": "An advanced RAG architecture indexing 1,000+ medical textbooks and publications. Harnessing LLaMA 3.3 and Gemini Vision, it supports multimodal healthcare QA, boosting retrieval precision by 35%.",
-      "stats": [
-        { "label": "Retrieval Gain", "val": "+35%" },
-        { "label": "Latency Drop", "val": "-25%" },
-        { "label": "Medical Sources", "val": "1,000+" }
-      ],
+      "role": "My role · AI/ML engineer — RAG pipeline, vector search, and multimodal healthcare QA",
+      "desc": "RAG architecture indexing medical textbooks and publications, using LLaMA 3.3 and Gemini Vision for multimodal healthcare question answering.",
+      "problem": "Healthcare teams need trustworthy answers from large medical corpora, including text and visual clinical inputs.",
+      "approach": "RAG stack with FAISS vector search over indexed medical sources, LLaMA 3.3 for generation, and Gemini Vision for image-based queries.",
+      "impact": "Multimodal healthcare QA system with retrieval over a structured medical knowledge base.",
       "stack": ["RAG", "FAISS", "LLaMA 3.3", "Gemini Vision", "Healthcare AI", "Vector DB"],
-      "github": "https://github.com/Muskansh7/medilens-knowledge-engine",
-      "demo": "#"
+      "github": "https://github.com/Muskansh7/MediLens_Rag",
+      "demo": "https://medilens-ai-ieggfs6rennhrhhkn8k7jd.streamlit.app/"
     },
     {
       "title": "VoiceVision Healthcare AI",
-      "desc": "A multimodal interface bridging physical diagnosis tools. By merging speech recognition with computer vision models, it consolidates diagnostic views and cuts developer integration cycles by 40%.",
-      "stats": [
-        { "label": "Multimodal Tests", "val": "500+" },
-        { "label": "Integration Effort", "val": "-40%" },
-        { "label": "Inference", "val": "Local/Cloud" }
-      ],
+      "role": "My role · AI/ML engineer — speech, computer vision, and LLM integration",
+      "desc": "Multimodal healthcare interface that combines speech recognition with computer vision models for consolidated diagnostic workflows.",
+      "problem": "Clinical workflows often split voice notes and visual diagnostics across separate tools, slowing integration work.",
+      "approach": "Unified interface merging speech recognition, computer vision, and LLM inference with local and cloud deployment options.",
+      "impact": "Single pipeline that brings voice, vision, and language models together for healthcare use cases.",
       "stack": ["Computer Vision", "Speech Recognition", "LLM", "Multimodal AI", "Speech-to-Text"],
-      "github": "https://github.com/Muskansh7/voicevision-healthcare",
-      "demo": "#"
+      "github": "https://github.com/Muskansh7/AI_Doctor_Voicebot",
+      "demo": "https://huggingface.co/spaces/muskansh7/ai-doctor-voicebot"
+    }
+  ],
+  "moreWorkProjects": [
+    {
+      "title": "World Atlas",
+      "name": "world_Atlas",
+      "desc": "Responsive World Atlas web application that displays country information including population, capital, languages, flags, and regional details with search and filtering capabilities.",
+      "stack": ["React", "React Router", "REST API", "CSS"],
+      "github": "https://github.com/Muskansh7/world_Atlas"
+    },
+    {
+      "title": "Speech Recognition",
+      "name": "speech_recognation",
+      "desc": "Speech-to-text application that converts spoken audio into text in real time using Python speech recognition libraries, improving accessibility and voice-based interactions.",
+      "stack": ["Python", "SpeechRecognition", "NLP"],
+      "github": "https://github.com/Muskansh7/speech_recognation"
+    },
+    {
+      "title": "Task Flow",
+      "name": "Task-Flow",
+      "desc": "Full-stack task management application with secure JWT authentication. Users can register, log in, create and manage tasks, and build flashcards — deployed with a Next.js frontend and Node.js + Express + MongoDB backend.",
+      "stack": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "JWT"],
+      "github": "https://github.com/Muskansh7/Task-Flow"
     }
   ],
   "certifications": [

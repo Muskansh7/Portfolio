@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { label: 'Home', target: 'home' },
     { label: 'About', target: 'about' },
-    { label: 'Skills', target: 'skills' },
     { label: 'Experience', target: 'experience' },
     { label: 'Projects', target: 'projects' },
+    { label: 'Tech Stack', target: 'skills' },
     { label: 'Contact', target: 'contact' },
   ];
 
   useEffect(() => {
-    // Handle background opacity on scroll
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Section Highlight Logic (Scrollspy)
       const scrollPosition = window.scrollY + 150;
       for (const link of navLinks) {
         const el = document.getElementById(link.target);
@@ -58,126 +58,74 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 1000,
-        padding: isScrolled ? '12px 24px' : '20px 24px',
-        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        background: isScrolled ? 'rgba(10, 10, 15, 0.75)' : 'rgba(10, 10, 15, 0)',
-        backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid rgba(255, 255, 255, 0)',
-        boxShadow: isScrolled ? '0 10px 30px rgba(0, 0, 0, 0.3)' : 'none',
-      }}
+      className={`site-header${isScrolled ? ' site-header--scrolled' : ''}`}
     >
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        {/* Logo Monogram */}
+      <div className="site-header-inner">
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, 'home')}
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: '1.45rem',
-            color: '#FFFFFF',
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}
+          className="site-logo"
         >
-          <span style={{ color: '#00F5FF', filter: 'drop-shadow(0 0 6px rgba(0, 245, 255, 0.4))' }}>⚡</span>
+          <span className="site-logo-icon">⚡</span>
           <span>MS</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="desktop-nav">
+        <nav className="desktop-nav site-nav">
           {navLinks.map((link) => (
             <a
               key={link.target}
               href={`#${link.target}`}
               onClick={(e) => handleNavClick(e, link.target)}
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: '0.9rem',
-                color: activeSection === link.target ? '#00F5FF' : '#9CA3AF',
-                textDecoration: 'none',
-                position: 'relative',
-                padding: '6px 0',
-                transition: 'color var(--transition-fast)',
-                fontWeight: activeSection === link.target ? 600 : 400,
-              }}
-              className="nav-link"
+              className={`nav-link${activeSection === link.target ? ' nav-link--active' : ''}`}
             >
               {link.label}
               {activeSection === link.target && (
                 <motion.span
                   layoutId="activeNavLine"
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '2px',
-                    background: 'linear-gradient(90deg, #00F5FF, #7C3AED)',
-                    boxShadow: '0 0 8px rgba(0, 245, 255, 0.8)',
-                  }}
+                  className="nav-link-indicator"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               )}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
-            style={{
-              padding: '8px 20px',
-              borderRadius: '8px',
-              border: '1px solid rgba(0, 245, 255, 0.3)',
-              background: 'rgba(0, 245, 255, 0.05)',
-              color: '#00F5FF',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              fontFamily: "'Space Grotesk', sans-serif",
-              textDecoration: 'none',
-              transition: 'all var(--transition-fast)',
-            }}
             className="navbar-cta"
           >
             Connect
           </a>
         </nav>
 
-        {/* Hamburger Icon for Mobile */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#FFFFFF',
-            cursor: 'pointer',
-            padding: '4px',
-            display: 'none',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          className="hamburger-btn"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="mobile-nav-actions">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="hamburger-btn"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Drawer menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -185,19 +133,6 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            style={{
-              display: 'none',
-              flexDirection: 'column',
-              background: 'rgba(10, 10, 15, 0.95)',
-              backdropFilter: 'blur(20px)',
-              position: 'absolute',
-              top: '100%',
-              left: 0,
-              width: '100%',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-              padding: '20px 24px',
-              gap: '16px',
-            }}
             className="mobile-drawer"
           >
             {navLinks.map((link) => (
@@ -205,15 +140,7 @@ const Navbar = () => {
                 key={link.target}
                 href={`#${link.target}`}
                 onClick={(e) => handleNavClick(e, link.target)}
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: '1.1rem',
-                  color: activeSection === link.target ? '#00F5FF' : '#9CA3AF',
-                  textDecoration: 'none',
-                  padding: '8px 0',
-                  fontWeight: activeSection === link.target ? 600 : 400,
-                  display: 'block',
-                }}
+                className={`mobile-nav-link${activeSection === link.target ? ' mobile-nav-link--active' : ''}`}
               >
                 {link.label}
               </a>
@@ -221,20 +148,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
-              style={{
-                textAlign: 'center',
-                padding: '12px',
-                borderRadius: '8px',
-                border: '1px solid rgba(0, 245, 255, 0.3)',
-                background: 'rgba(0, 245, 255, 0.05)',
-                color: '#00F5FF',
-                fontSize: '1rem',
-                fontWeight: 600,
-                fontFamily: "'Space Grotesk', sans-serif",
-                textDecoration: 'none',
-                display: 'block',
-                marginTop: '10px',
-              }}
+              className="mobile-nav-cta"
             >
               Let's Connect
             </a>
@@ -243,20 +157,176 @@ const Navbar = () => {
       </AnimatePresence>
 
       <style>{`
-        .nav-link:hover {
-          color: #00F5FF !important;
+        .site-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          padding: 20px 24px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          background: var(--color-nav-bg);
+          border-bottom: 1px solid transparent;
         }
+
+        .site-header--scrolled {
+          padding: 12px 24px;
+          background: var(--color-nav-bg-scrolled);
+          backdrop-filter: blur(16px);
+          border-bottom: 1px solid var(--color-nav-border);
+          box-shadow: var(--color-nav-shadow);
+        }
+
+        .site-header-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .site-logo {
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 700;
+          font-size: 1.45rem;
+          color: var(--color-heading);
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .site-logo-icon {
+          color: var(--color-cyan);
+          filter: drop-shadow(0 0 6px var(--color-cyan-glow));
+        }
+
+        .site-nav {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+
+        .nav-link {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 0.9rem;
+          color: var(--color-nav-link);
+          text-decoration: none;
+          position: relative;
+          padding: 6px 0;
+          transition: color var(--transition-fast);
+          font-weight: 400;
+        }
+
+        .nav-link--active {
+          color: var(--color-cyan);
+          font-weight: 600;
+        }
+
+        .nav-link:hover {
+          color: var(--color-cyan);
+        }
+
+        .nav-link-indicator {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, var(--color-cyan), var(--color-violet));
+          box-shadow: 0 0 8px var(--color-cyan-glow);
+        }
+
+        .navbar-cta {
+          padding: 8px 20px;
+          border-radius: 8px;
+          border: 1px solid rgba(0, 245, 255, 0.3);
+          background: rgba(0, 245, 255, 0.05);
+          color: var(--color-cyan);
+          font-size: 0.85rem;
+          font-weight: 600;
+          font-family: 'Space Grotesk', sans-serif;
+          text-decoration: none;
+          transition: all var(--transition-fast);
+        }
+
+        [data-theme="light"] .navbar-cta {
+          background: rgba(8, 145, 178, 0.08);
+          border-color: rgba(8, 145, 178, 0.3);
+        }
+
         .navbar-cta:hover {
           background: rgba(0, 245, 255, 0.15);
           box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
           transform: translateY(-1px);
         }
-        
+
+        .mobile-nav-actions {
+          display: none;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .hamburger-btn {
+          background: none;
+          border: none;
+          color: var(--color-heading);
+          cursor: pointer;
+          padding: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-drawer {
+          display: none;
+          flex-direction: column;
+          background: var(--color-mobile-drawer-bg);
+          backdrop-filter: blur(20px);
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          border-bottom: 1px solid var(--color-nav-border);
+          padding: 20px 24px;
+          gap: 16px;
+        }
+
+        .mobile-nav-link {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 1.1rem;
+          color: var(--color-nav-link);
+          text-decoration: none;
+          padding: 8px 0;
+          font-weight: 400;
+          display: block;
+        }
+
+        .mobile-nav-link--active {
+          color: var(--color-cyan);
+          font-weight: 600;
+        }
+
+        .mobile-nav-cta {
+          text-align: center;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid rgba(0, 245, 255, 0.3);
+          background: rgba(0, 245, 255, 0.05);
+          color: var(--color-cyan);
+          font-size: 1rem;
+          font-weight: 600;
+          font-family: 'Space Grotesk', sans-serif;
+          text-decoration: none;
+          display: block;
+          margin-top: 10px;
+        }
+
         @media (max-width: 768px) {
           .desktop-nav {
             display: none !important;
           }
-          .hamburger-btn {
+          .mobile-nav-actions {
             display: flex !important;
           }
           .mobile-drawer {
