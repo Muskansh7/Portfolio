@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User, Sparkles } from 'lucide-react';
 import resumeData from '../data/resumeData.json';
+const API = import.meta.env.VITE_API_URL;
 
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const AIAssistant = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('${API}/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
